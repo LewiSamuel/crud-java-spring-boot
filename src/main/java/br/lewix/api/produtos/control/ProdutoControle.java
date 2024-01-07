@@ -13,10 +13,12 @@ import br.lewix.api.produtos.model.RespostaModel;
 import br.lewix.api.produtos.service.ProdutoService;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 
 
 @RestController // criar rotas
+@RequestMapping("/produtos")
 @CrossOrigin(origins = "*") // configura cors
 public class ProdutoControle {
   
@@ -43,9 +45,5 @@ public class ProdutoControle {
       return produtoService.listar();
   }
 
-  @GetMapping("/")
-  public String rota(){
-    return "API DE PRODUTOS";
-  }
 
 }
